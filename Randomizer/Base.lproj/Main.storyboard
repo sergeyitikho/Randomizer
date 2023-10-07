@@ -26,7 +26,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="5X8-jD-Nc8">
-                                <rect key="frame" x="86.666666666666671" y="220" width="231.33333333333331" height="42"/>
+                                <rect key="frame" x="86.666666666666671" y="168" width="231.33333333333331" height="42"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="from" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKp-Hn-hJl">
                                         <rect key="frame" x="0.0" y="0.0" width="44.333333333333336" height="42"/>
@@ -73,7 +73,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Random number" id="DhT-7Z-SpS">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="gearshape.fill" catalog="system" id="MY2-We-22M"/>
+                        <barButtonItem key="backBarButtonItem" title="back" id="BPS-Vq-9pp"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="gearshape.fill" catalog="system" id="MY2-We-22M">
+                            <connections>
+                                <segue destination="wfS-pg-19X" kind="presentation" id="rMH-We-qWs"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="getResultsButton" destination="Zxf-vO-ntN" id="51V-hU-6w9"/>
@@ -86,13 +91,68 @@
             </objects>
             <point key="canvasLocation" x="1057.2519083969464" y="-27.464788732394368"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="aN3-Dn-Zmu">
+            <objects>
+                <viewController id="wfS-pg-19X" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="y0I-mz-bn6">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="minimum" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cVY-VO-M3G">
+                                <rect key="frame" x="32" y="102" width="329" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="maximum" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FeV-82-b0Z">
+                                <rect key="frame" x="32" y="190" width="329" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="Aoy-CJ-NMG">
+                                <rect key="frame" x="158" y="643" width="76.666666666666686" height="93.666666666666629"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="APY-UC-bUN">
+                                        <rect key="frame" x="0.0" y="0.0" width="76.666666666666671" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Save"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ld-Vf-7fI">
+                                        <rect key="frame" x="0.0" y="59.333333333333371" width="76.666666666666671" height="34.333333333333343"/>
+                                        <color key="tintColor" systemColor="systemPinkColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Cancel"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fw9-8W-eOH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="FeV-82-b0Z" firstAttribute="leading" secondItem="fw9-8W-eOH" secondAttribute="leading" constant="32" id="0kP-MI-Taa"/>
+                            <constraint firstItem="fw9-8W-eOH" firstAttribute="trailing" secondItem="FeV-82-b0Z" secondAttribute="trailing" constant="32" id="3Iw-MI-KWQ"/>
+                            <constraint firstItem="fw9-8W-eOH" firstAttribute="trailing" secondItem="cVY-VO-M3G" secondAttribute="trailing" constant="32" id="8Pz-qI-X3V"/>
+                            <constraint firstItem="fw9-8W-eOH" firstAttribute="bottom" secondItem="Aoy-CJ-NMG" secondAttribute="bottom" constant="105.33" id="GUS-dd-kFQ"/>
+                            <constraint firstItem="cVY-VO-M3G" firstAttribute="leading" secondItem="fw9-8W-eOH" secondAttribute="leading" constant="32" id="QHb-qb-jPD"/>
+                            <constraint firstItem="fw9-8W-eOH" firstAttribute="trailing" secondItem="Aoy-CJ-NMG" secondAttribute="trailing" constant="158.33000000000001" id="Uhg-TF-pQN"/>
+                            <constraint firstItem="FeV-82-b0Z" firstAttribute="top" secondItem="cVY-VO-M3G" secondAttribute="bottom" constant="54" id="ehT-LE-6Ie"/>
+                            <constraint firstItem="Aoy-CJ-NMG" firstAttribute="leading" secondItem="fw9-8W-eOH" secondAttribute="leading" constant="158" id="mhr-8l-2jV"/>
+                            <constraint firstItem="cVY-VO-M3G" firstAttribute="top" secondItem="fw9-8W-eOH" secondAttribute="top" constant="102" id="qHg-Gl-erF"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="rPh-Jl-2sL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b4U-Yq-DbC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1913.740458015267" y="-23.239436619718312"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="akG-MV-a0L">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LMP-A6-12P" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Pn4-x3-Run">
-                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Pn4-x3-Run">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -109,6 +169,9 @@
         <image name="gearshape.fill" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
