@@ -12,9 +12,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var minimumValue: UILabel!
     @IBOutlet weak var maximumValue: UILabel!
     @IBOutlet weak var resultValue: UILabel!
+    @IBOutlet weak var getResultsButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        getResultsButton.layer.cornerRadius = 10
     }
 
     @IBAction func getresultsButton() {
