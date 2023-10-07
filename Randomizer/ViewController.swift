@@ -18,6 +18,9 @@ class ViewController: UIViewController {
     }
 
     @IBAction func getresultsButton() {
+        let minimumNumber = Int(minimumValue.text ?? "") ?? 0
+        let maximumNumber = Int(maximumValue.text ?? "") ?? 100
+        resultValue.text = Int.random(in: minimumNumber...maximumNumber).formatted()
     }
     
 }
