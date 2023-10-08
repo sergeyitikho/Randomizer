@@ -9,13 +9,23 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
+    @IBOutlet weak var minimumTF: UITextField!
+    @IBOutlet weak var maximumTF: UITextField!
+    var tempMinimum :String!
+    var tempMaximum :String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        minimumTF.text = tempMinimum
+        maximumTF.text = tempMaximum
     }
     
-
+    @IBAction func savePressed() {
+    }
+    
+    @IBAction func cancelPressed() {
+        dismiss(animated: true)
+    }
     /*
     // MARK: - Navigation
 
